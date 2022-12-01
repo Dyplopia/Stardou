@@ -22,7 +22,7 @@ public class meteo : MonoBehaviour
         {
             {
                 soleil = true;
-                Debug.Log("Il fait soleil.");
+                System.Console.WriteLine("Il fait soleil.");
                 timer = Random.Range(5f, 20f);
             }
         }
@@ -33,7 +33,7 @@ public class meteo : MonoBehaviour
             if (timer <= 0f) 
             {
                 soleil = false;
-                Debug.Log("Il pleut.");
+                System.Console.WriteLine("Il pleut.");
             }
         }
     } 
