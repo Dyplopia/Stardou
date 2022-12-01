@@ -35,6 +35,24 @@ public class achatPlantes : MonoBehaviour
         //        }
         //}
     }
+    public void OnClick()
+    {
+        if (argent < achatlegu1)
+        {
+            Debug.Log("Pas assez de pesos!");
+        }
+        else
+        {
+            argent = argent - achatlegu1;
+            grainelegu1 = grainelegu1 + 1;
+            Debug.Log("Vous avez acheté une graine de legu1.");
+        }
+    }
+
+    public void OnClick2()
+    {
+        Debug.Log("Ce légume n'est pas encore disponible.");
+    }
 
     //private void BoutonAchat(Button buttonPressed)
     //{
@@ -58,22 +76,4 @@ public class achatPlantes : MonoBehaviour
     //    }
     //}
 
-    public void OnClick()
-    {
-        if (argent < achatlegu1)
-        {
-            Debug.Log("Pas assez de pesos!");
-        }
-        else
-        {
-            argent = argent - achatlegu1;
-            grainelegu1 = grainelegu1 + 1;
-            Debug.Log("Vous avez acheté une graine de legu1.");
-        }
-    }
-
-    public void OnClick2()
-    {
-        Debug.Log("Ce légume n'est pas encore disponible.");
-    }
 }
