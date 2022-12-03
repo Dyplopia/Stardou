@@ -5,7 +5,8 @@ using UnityEngine.UI;
 
 public class achatPlantes : MonoBehaviour
 {
-    public int grainelegu1 = 2;
+    public int grainelegu1 = 1;
+    public int grainelegu2 = 0;
     public int argent = 50;
     public int achatlegu1 = 20;
 
