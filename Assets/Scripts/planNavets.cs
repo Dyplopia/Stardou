@@ -6,8 +6,8 @@ public class planNavets : MonoBehaviour
 {
     public GameObject stock;
     public GameObject shop;
-    private bool usedplan1 = false;
-    private bool usedplan2 = false;
+    public bool usedplan1 = false;
+    public bool usedplan2 = false;
 
     // Start is called before the first frame update
     void Start()
