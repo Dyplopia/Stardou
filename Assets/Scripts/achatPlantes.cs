@@ -24,6 +24,7 @@ public class achatPlantes : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        txt.GetComponent<UnityEngine.UI.Text>().text = grainelegu1.ToString();
         //if (Input.GetMouseButtonDown(0))
         //{
         //        if (argent < achatlegu1)
@@ -49,7 +50,6 @@ public class achatPlantes : MonoBehaviour
             argent = argent - achatlegu1;
             grainelegu1 = grainelegu1 + 1;
             Debug.Log("Vous avez acheté une graine de legu1.");
-            txt.GetComponent<UnityEngine.UI.Text>().text = grainelegu1.ToString();
         }
     }
 
