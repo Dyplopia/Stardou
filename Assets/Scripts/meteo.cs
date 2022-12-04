@@ -10,33 +10,43 @@ public class meteo : MonoBehaviour
 
     public float chanceOfRain = 50f;
     public float dice;
-    public bool soleil;
-    public float timer = 0f;
+    public float cycle = 4.0f;
+ 
+
+   
+    public void Start()
+    {
+        
+    }
+
+    IEnumerator soleil() 
+    {
+        Debug.Log("Il fait soleil.");
+        yield return new WaitForSeconds(cycle);
+    }
+
+    IEnumerator pluie()
+    {
+        Debug.Log("Il pleut.");
+        yield return new WaitForSeconds(cycle);
+    }
 
     // Update is called once per frame
     public void Update()
     {
-        dice = Random.Range(0f, 100.0f);
+    dice = Random.Range(0f, 100.0f);
 
-        if (dice<chanceOfRain) 
+        if (dice >= chanceOfRain)
         {
-            {
-                soleil = true;
-                System.Console.WriteLine("Il fait soleil.");
-                //Debug.Log("Il fait soleil.");
-                timer = Random.Range(5f, 20f);
-            }
+            StartCoroutine(pluie());
+            StopCoroutine(pluie());
         }
-        
-        if(soleil)
+
+        else if (dice < chanceOfRain)
         {
-            timer -= Time.deltaTime;
-            if (timer <= 0f) 
-            {
-                soleil = false;
-                System.Console.WriteLine("Il pleut.");
-                //Debug.Log("Il pleut.");
-            }
+            StartCoroutine(soleil());
+            StopCoroutine(soleil());
         }
-    } 
-}
+    }
+} 
+
