@@ -1651,6 +1651,7 @@ GameObject:
   - component: {fileID: 1125346075}
   - component: {fileID: 1125346078}
   - component: {fileID: 1125346077}
+  - component: {fileID: 1125346079}
   m_Layer: 0
   m_Name: "R\xE9colte"
   m_TagString: Untagged
@@ -1672,6 +1673,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stock: {fileID: 0}
   arroselect: 0
+  plan1mouiller: 0
+  plan2mouiller: 0
   _stageNavet:
   - {fileID: 832330170}
   - {fileID: 1058894634}
@@ -1727,6 +1730,22 @@ MonoBehaviour:
   stock: {fileID: 0}
   usedplan1: 0
   usedplan2: 0
+--- !u!114 &1125346079
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1125346074}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01c5726633ba71a468e8401cdd266ba6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  chanceOfRain: 50
+  dice: 0
+  cycle: 6
+  plansMouiller: {fileID: 1125346075}
 --- !u!4 &1169697175 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1506613985059994156, guid: 32aced197e38e2c4f94148e544efdbcb, type: 3}
@@ -1846,8 +1865,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   chanceOfRain: 50
   dice: 0
-  soleil: 0
-  timer: 0
+  cycle: 4
+  plansMouiller: {fileID: 0}
 --- !u!4 &1310287669
 Transform:
   m_ObjectHideFlags: 0

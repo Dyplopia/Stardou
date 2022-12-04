@@ -8,8 +8,8 @@ public class navetRecolte : MonoBehaviour
     public GameObject stock;
     public bool arroselect = false;
 
-    private bool plan1mouiller = false;
-    private bool plan2mouiller = false;
+    public bool plan1mouiller = false;
+    public bool plan2mouiller = false;
 
     float timemouiller = 0f;
     float time2mouiller = 0f;
