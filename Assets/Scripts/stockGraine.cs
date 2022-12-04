@@ -12,7 +12,7 @@ public class stockGraine : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        shop = GameObject.Find("Magasin");
+        shop = GameObject.Find("Récolte");
     }
 
     // Update is called once per frame

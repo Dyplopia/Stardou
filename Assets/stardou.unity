@@ -139,7 +139,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &84416325
 Transform:
   m_ObjectHideFlags: 0
@@ -162,13 +162,12 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 84416324}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5481d4d7895b2a640adad3e5db42be93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   stock: {fileID: 0}
-  shop: {fileID: 0}
   usedplan1: 0
   usedplan2: 0
 --- !u!1 &181205333
@@ -188,7 +187,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &181205334
 RectTransform:
   m_ObjectHideFlags: 0
@@ -257,7 +256,7 @@ PrefabInstance:
     - target: {fileID: 973001887120004106, guid: baa2f968cfe1870489e7eeb910ecf9a6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 381313381}
+      objectReference: {fileID: 1125346077}
     - target: {fileID: 973001887120004106, guid: baa2f968cfe1870489e7eeb910ecf9a6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: OnClick
@@ -551,7 +550,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &381313381
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -559,7 +558,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 381313380}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 71b4065273d73e841b80c31ffd966e15, type: 3}
   m_Name: 
@@ -1031,7 +1030,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &832330171
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1174,7 +1173,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 84416326}
+      - m_Target: {fileID: 1125346078}
         m_TargetAssemblyTypeName: planNavets, Assembly-CSharp
         m_MethodName: OnClickPlan1
         m_Mode: 1
@@ -1405,7 +1404,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1058894635
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1474,7 +1473,7 @@ PrefabInstance:
     - target: {fileID: 973001887120004106, guid: baa2f968cfe1870489e7eeb910ecf9a6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 381313381}
+      objectReference: {fileID: 1125346077}
     - target: {fileID: 973001887120004106, guid: baa2f968cfe1870489e7eeb910ecf9a6, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: OnClick2
@@ -1696,6 +1695,8 @@ GameObject:
   m_Component:
   - component: {fileID: 1125346076}
   - component: {fileID: 1125346075}
+  - component: {fileID: 1125346078}
+  - component: {fileID: 1125346077}
   m_Layer: 0
   m_Name: "R\xE9colte"
   m_TagString: Untagged
@@ -1716,13 +1717,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stock: {fileID: 0}
-  money: 0
   arroselect: 0
-  plan: 0
   _stageNavet:
-  - {fileID: 832330172}
-  - {fileID: 1058894636}
-  - {fileID: 181205335}
+  - {fileID: 832330170}
+  - {fileID: 1058894634}
+  - {fileID: 181205333}
 --- !u!4 &1125346076
 Transform:
   m_ObjectHideFlags: 0
@@ -1738,6 +1737,37 @@ Transform:
   m_Father: {fileID: 255418484}
   m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1125346077
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1125346074}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 71b4065273d73e841b80c31ffd966e15, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  grainelegu1: 1
+  grainelegu2: 0
+  argent: 50
+  achatlegu1: 20
+--- !u!114 &1125346078
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1125346074}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5481d4d7895b2a640adad3e5db42be93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stock: {fileID: 0}
+  usedplan1: 0
+  usedplan2: 0
 --- !u!1 &1169697174
 GameObject:
   m_ObjectHideFlags: 0
@@ -2402,7 +2432,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 84416326}
+      - m_Target: {fileID: 1125346078}
         m_TargetAssemblyTypeName: planNavets, Assembly-CSharp
         m_MethodName: OnClickPlan2
         m_Mode: 1

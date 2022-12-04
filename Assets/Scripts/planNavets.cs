@@ -5,14 +5,12 @@ using UnityEngine;
 public class planNavets : MonoBehaviour
 {
     public GameObject stock;
-    public GameObject shop;
     public bool usedplan1 = false;
     public bool usedplan2 = false;
 
     // Start is called before the first frame update
     void Start()
     {
-        shop = GameObject.Find("Magasin");
         stock = GameObject.Find("StockGraines");
     }
 
@@ -28,7 +26,7 @@ public class planNavets : MonoBehaviour
         {
             Debug.Log("Navet planté.");
             usedplan1 = true;
-            shop.GetComponent<achatPlantes>().grainelegu1 = shop.GetComponent<achatPlantes>().grainelegu1 - 1;
+            GetComponent<achatPlantes>().grainelegu1 = GetComponent<achatPlantes>().grainelegu1 - 1;
             stock.GetComponent<stockGraine>().OnClickNavet();
             stock.GetComponent<stockGraine>().dejaselect = false;
         }
@@ -50,7 +48,7 @@ public class planNavets : MonoBehaviour
         {
             Debug.Log("Navet planté.");
             usedplan2 = true;
-            shop.GetComponent<achatPlantes>().grainelegu1 = shop.GetComponent<achatPlantes>().grainelegu1 - 1;
+            GetComponent<achatPlantes>().grainelegu1 = GetComponent<achatPlantes>().grainelegu1 - 1;
             stock.GetComponent<stockGraine>().OnClickNavet();
             stock.GetComponent<stockGraine>().dejaselect = false;
         }

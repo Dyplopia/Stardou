@@ -6,28 +6,32 @@ using UnityEngine.UI;
 public class navetRecolte : MonoBehaviour
 {
     public GameObject stock;
-    public int money;
     public bool arroselect = false;
-    public bool plan;
     private bool planmouiller = false;
     float timemouiller = 3f;
     float timer = 0f;
     bool navetReady = false;
-    public Image[] _stageNavet = new Image[3];
+    public GameObject[] _stageNavet;
 
     // Start is called before the first frame update
     void Start()
     {
-        plan = GetComponent<planNavets>().usedplan1;
-        //plan = GetComponent<planNavets>().usedplan2;
-        money = GetComponent<achatPlantes>().argent;
+        _stageNavet = new GameObject[3];
+        _stageNavet[0] = GameObject.Find("navetS1");
+        _stageNavet[1] = GameObject.Find("navetS2");
+        _stageNavet[2] = GameObject.Find("navetS3");
+        _stageNavet[0].SetActive(false);
+        _stageNavet[1].SetActive(false);
+        _stageNavet[2].SetActive(false);
+
         stock = GameObject.Find("StockGraines");
     }
 
     // Update is called once per frame
     void Update()
     {
-
+        NavetGrowth();
+        tpsArro();
     }
 
     public void OnClickArrosoir()
@@ -55,9 +59,11 @@ public class navetRecolte : MonoBehaviour
                 planmouiller = true;
                 arroselect = false;
                 Debug.Log("Arrosoir déséquipé.");
-
-            //timemouiller pour re-arroser
-        }
+                tpsArro();
+                NavetGrowth();
+            
+                //timemouiller pour re-arroser
+            }
 
             else if (arroselect == true && planmouiller == true)
             {
@@ -66,32 +72,46 @@ public class navetRecolte : MonoBehaviour
         //}
     }
 
+    public void tpsArro()
+    {
+        if (planmouiller == true)
+        {
+            timemouiller -= 1 * Time.deltaTime;
+            if (timemouiller == 0)
+            {
+                planmouiller = false;
+                Debug.Log("Le plan a besoin d'eau.");
+                timemouiller = 3;
+            }
+        }
+    }
+
     public void NavetGrowth()
     {
-        if (plan == true)
+        if (GetComponent<planNavets>().usedplan1 == true)
         {
-            Debug.Log("plan utilisé");
+            //Debug.Log("plan utilisé");
 
             if (planmouiller == true)
             {
                 timer += 1 * Time.deltaTime;
-                if (timer >= 2)
+                if (timer >= 1)
                 {
-                    GameObject.Find("navetS1").SetActive(true);
+                    _stageNavet[0].SetActive(true);
                     Debug.Log("Le navet a grandit.");
                 }
 
-                if (timer >= 4)
+                if (timer >= 2)
                 {
-                    GameObject.Find("navetS1").SetActive(false);
-                    GameObject.Find("navetS2").SetActive(true);
+                    _stageNavet[0].SetActive(false);
+                    _stageNavet[1].SetActive(true);
                     Debug.Log("Le navet pousse encore.");
                 }
 
-                if (timer >= 6)
+                if (timer >= 3)
                 {
-                    GameObject.Find("navetS2").SetActive(false);
-                    GameObject.Find("navetS3").SetActive(true);
+                    _stageNavet[1].SetActive(false);
+                    _stageNavet[2].SetActive(true);
                     navetReady = true;
                     Debug.Log("Le navet peut être récolté.");
                 }
@@ -103,10 +123,10 @@ public class navetRecolte : MonoBehaviour
     {
         if (navetReady == true)
         {
-            GameObject.Find("navetS3").SetActive(false);
+            _stageNavet[2].SetActive(false);
             navetReady = false;
-            plan = false;
-            money += 20;
+            GetComponent<planNavets>().usedplan1 = false;
+            GetComponent<achatPlantes>().argent += 20;
             Debug.Log("Le navet a été récolté. Vous l'avez vendu 20 pesos.");
             timer = 0;
         }
