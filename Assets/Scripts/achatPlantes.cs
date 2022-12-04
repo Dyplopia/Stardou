@@ -8,7 +8,9 @@ public class achatPlantes : MonoBehaviour
     public int grainelegu1 = 1;
     public int grainelegu2 = 0;
     public int argent = 50;
-    public int achatlegu1 = 20;
+    public int achatlegu1 = 10;
+
+    public GameObject txt;
 
     //public Button Legu1Achat;
     //public Button Legu2Achat;
@@ -16,12 +18,13 @@ public class achatPlantes : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-   
+        txt = GameObject.Find("nbrGraine1");
     }
 
     // Update is called once per frame
     void Update()
     {
+        txt.GetComponent<UnityEngine.UI.Text>().text = grainelegu1.ToString();
         //if (Input.GetMouseButtonDown(0))
         //{
         //        if (argent < achatlegu1)

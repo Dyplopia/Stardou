@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class stockGraine : MonoBehaviour
 {
@@ -8,6 +9,7 @@ public class stockGraine : MonoBehaviour
     public bool selectNavet = false;
     public bool selectLegu2 = false;
     public bool dejaselect = false;
+
 
     // Start is called before the first frame update
     void Start()
