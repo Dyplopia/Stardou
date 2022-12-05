@@ -694,6 +694,7 @@ MonoBehaviour:
   selectNavet: 0
   selectLegu2: 0
   dejaselect: 0
+  buttonarro: {fileID: 712057131}
 --- !u!1001 &471180582
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1750,6 +1751,7 @@ MonoBehaviour:
   arroselect: 0
   plan1mouiller: 0
   plan2mouiller: 0
+  buttongraine: {fileID: 1729826400}
   _stageNavet:
   - {fileID: 832330170}
   - {fileID: 1058894634}
@@ -1821,6 +1823,7 @@ MonoBehaviour:
   chanceOfRain: 50
   dice: 0
   cycle: 6
+  countTime: 0
   meteoo:
   - {fileID: 21300000, guid: 0927fd7ac5cfcd744bc16af44c9baa1d, type: 3}
   - {fileID: 21300000, guid: 66bc8effb1a45fa489dc110aef3073ad, type: 3}
@@ -2215,6 +2218,17 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 1199258482624479782, guid: 1afb46272b686f143b382c25119c9f42, type: 3}
   m_PrefabInstance: {fileID: 1199258481063873657}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &1729826400 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1199258482624479769, guid: 1afb46272b686f143b382c25119c9f42, type: 3}
+  m_PrefabInstance: {fileID: 1199258481063873657}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1797499920
 GameObject:
   m_ObjectHideFlags: 0

@@ -20,6 +20,8 @@ public class navetRecolte : MonoBehaviour
     bool navetReady = false;
     bool navet2Ready = false;
 
+    public Button buttongraine;
+
     public GameObject[] _stageNavet;
     public GameObject[] _stageNavet2 = new GameObject[3];
 
@@ -57,12 +59,14 @@ public class navetRecolte : MonoBehaviour
         {
             Debug.Log("Arrosoir équipé.");
             arroselect = true;
+            buttongraine.interactable = false;
         }
 
         else
         {
             Debug.Log("Arrosoir déséquipé.");
             arroselect = false;
+            buttongraine.interactable = true;
         }
     }
 
@@ -75,6 +79,7 @@ public class navetRecolte : MonoBehaviour
                 Debug.Log("Le plan est arrosé.");
                 plan1mouiller = true;
                 arroselect = false;
+                buttongraine.interactable = true;
                 Debug.Log("Arrosoir déséquipé.");
 
             //temps de sol mouillé avant de devoir ré-arroser
@@ -88,7 +93,9 @@ public class navetRecolte : MonoBehaviour
             else if (arroselect == true && plan1mouiller == true)
             {
                 Debug.Log("Plan déjà arrosé.");
-            }
+                arroselect = false;
+                buttongraine.interactable = true;
+        }
     }
 
     public void OnClickArroser2()
@@ -98,6 +105,8 @@ public class navetRecolte : MonoBehaviour
                 Debug.Log("Le plan est arrosé.");
                 plan2mouiller = true;
                 arroselect = false;
+                buttongraine.interactable = true;
+
                 Debug.Log("Arrosoir déséquipé.");
             //temps de sol mouillé avant de devoir ré-arroser
                 tpsArro();
@@ -109,6 +118,8 @@ public class navetRecolte : MonoBehaviour
             else if (arroselect == true && plan2mouiller == true)
             {
                 Debug.Log("Plan déjà arrosé.");
+                arroselect = false;
+                buttongraine.interactable = true;
             }   
         //}
     }
@@ -147,25 +158,26 @@ public class navetRecolte : MonoBehaviour
             if (plan1mouiller == true)
             {
                 timer += 1 * Time.deltaTime;
-                if (timer >= 1)
+
+                if (timer >= 6)
                 {
-                    _stageNavet[0].SetActive(true);
-                    Debug.Log("Le navet a grandit.");
+                    _stageNavet[2].SetActive(true);
+                    _stageNavet[1].SetActive(false);
+                    navetReady = true;
+                    Debug.Log("Le navet peut être récolté.");
                 }
 
-                if (timer >= 3)
+                else if (timer >= 3)
                 {
                     _stageNavet[0].SetActive(false);
                     _stageNavet[1].SetActive(true);
                     Debug.Log("Le navet pousse encore.");
                 }
 
-                if (timer >= 6)
+                else if (timer >= 1)
                 {
-                    _stageNavet[1].SetActive(false);
-                    _stageNavet[2].SetActive(true);
-                    navetReady = true;
-                    Debug.Log("Le navet peut être récolté.");
+                    _stageNavet[0].SetActive(true);
+                    Debug.Log("Le navet a grandit.");
                 }
             }
         }
@@ -175,29 +187,25 @@ public class navetRecolte : MonoBehaviour
             if (plan2mouiller == true)
             {
                 timer2 += 1 * Time.deltaTime;
-                if (timer2 >= 1)
+                if (timer2 >= 6)
                 {
-                    _stageNavet2[0].SetActive(true);
-                    Debug.Log("Le navet a grandit.");
-
+                    _stageNavet2[2].SetActive(true);
+                    _stageNavet2[1].SetActive(false);
+                    navet2Ready = true;
+                    Debug.Log("Le navet peut être récolté.");
                 }
 
-                if (timer2 >= 3)
+                else if (timer2 >= 3)
                 {
                     _stageNavet2[0].SetActive(false);
                     _stageNavet2[1].SetActive(true);
-
                     Debug.Log("Le navet pousse encore.");
-
                 }
 
-                if (timer2 >= 6)
+                else if (timer2 >= 1)
                 {
-                    _stageNavet2[1].SetActive(false);
-                    _stageNavet2[2].SetActive(true);
-                    navet2Ready = true;
-
-                    Debug.Log("Le navet peut être récolté.");
+                    _stageNavet2[0].SetActive(true);
+                    Debug.Log("Le navet a grandit.");
                 }
             }
         }
@@ -205,7 +213,7 @@ public class navetRecolte : MonoBehaviour
 
     public void OnclickRecolte()
     {
-        if (navetReady == true && arroselect ==false)
+        if (navetReady == true && arroselect == false)
         {
             _stageNavet[2].SetActive(false);
             navetReady = false;
