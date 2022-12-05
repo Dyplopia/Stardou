@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class meteo : MonoBehaviour
 {
@@ -12,11 +13,12 @@ public class meteo : MonoBehaviour
     public float dice;
     public float cycle = 6f;
 
+    public Sprite[] meteoo = new Sprite[2];
+
     public navetRecolte plansMouiller;
 
     public void Start()
     {
-       
 
     }
 
@@ -38,12 +40,14 @@ public class meteo : MonoBehaviour
         {
             Debug.Log("Il pleut.");
             plansMouiller.plan1mouiller = true;
-            plansMouiller.plan2mouiller = true; 
+            plansMouiller.plan2mouiller = true;
+            //meteoo.GetComponent<Image>().color = Color.blue;
         }
 
         else if (dice < chanceOfRain)
         {
             Debug.Log("Il fait soleil.");
+            //meteoo.GetComponent<Image>().color = Color.yellow;
         }
 
     }
