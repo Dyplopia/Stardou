@@ -10,6 +10,7 @@ public class stockGraine : MonoBehaviour
     public bool selectLegu2 = false;
     public bool dejaselect = false;
 
+    public Button buttonarro;
 
     // Start is called before the first frame update
     void Start()
@@ -30,6 +31,7 @@ public class stockGraine : MonoBehaviour
             Debug.Log("Graine de navet sélectionnée.");
             selectNavet = true;
             dejaselect = true;
+            buttonarro.interactable = false;
         }
 
         else if (dejaselect == true)
@@ -37,6 +39,7 @@ public class stockGraine : MonoBehaviour
             Debug.Log("Graine déselectionnée.");
             selectNavet = false;
             dejaselect = false;
+            buttonarro.interactable = true;
         }
 
         else
