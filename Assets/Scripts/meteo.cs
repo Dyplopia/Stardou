@@ -9,9 +9,10 @@ public class meteo : MonoBehaviour
 
     //ajouter des particles quand on mettra les assets
 
-    public float chanceOfRain = 50f;
+    public float chanceOfRain = 80f;
     public float dice;
-    public float cycle = 6f;
+    public float cycle = 10f;
+    public float countTime = 0f;
 
     public Sprite[] meteoo = new Sprite[2];
     public Image spritemeteo;
@@ -23,11 +24,26 @@ public class meteo : MonoBehaviour
         spritemeteo = GameObject.Find("SoleilPluie").GetComponent<Image>();
     }
 
-    IEnumerator diceThrow() 
+    private void diceThrow() 
     {
-        yield return new WaitForSeconds(cycle);
         dice = Random.Range(0f, 100.0f);
+        if (dice >= chanceOfRain)
+        {
+            Debug.Log("Il pleut.");
+            spritemeteo.sprite = meteoo[1];
 
+            while (dice >= chanceOfRain)
+            {
+                plansMouiller.plan1mouiller = true;
+                plansMouiller.plan2mouiller = true;
+            }
+        }
+
+        else if (dice < chanceOfRain)
+        {
+            Debug.Log("Il fait soleil.");
+            spritemeteo.sprite = meteoo[0];
+        }
     }
 
 
@@ -35,24 +51,13 @@ public class meteo : MonoBehaviour
     // Update is called once per frame
     public void Update()
     {
-        StartCoroutine(diceThrow());
 
-        if (dice >= chanceOfRain)
+        countTime += Time.deltaTime; 
+        if (countTime >= cycle)
         {
-            Debug.Log("Il pleut.");
-            plansMouiller.plan1mouiller = true;
-            plansMouiller.plan2mouiller = true;
-            spritemeteo.sprite = meteoo[1];
-
+            diceThrow();
+            countTime = 0f;
         }
-
-        else if (dice < chanceOfRain)
-        {
-            Debug.Log("Il fait soleil.");
-            spritemeteo.sprite = meteoo[0];
-
-        }
-
     }
 }
 
