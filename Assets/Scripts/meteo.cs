@@ -14,12 +14,13 @@ public class meteo : MonoBehaviour
     public float cycle = 6f;
 
     public Sprite[] meteoo = new Sprite[2];
+    public Image spritemeteo;
 
     public navetRecolte plansMouiller;
 
     public void Start()
     {
-
+        spritemeteo = GameObject.Find("SoleilPluie").GetComponent<Image>();
     }
 
     IEnumerator diceThrow() 
@@ -41,13 +42,15 @@ public class meteo : MonoBehaviour
             Debug.Log("Il pleut.");
             plansMouiller.plan1mouiller = true;
             plansMouiller.plan2mouiller = true;
-            //meteoo.GetComponent<Image>().color = Color.blue;
+            spritemeteo.sprite = meteoo[1];
+
         }
 
         else if (dice < chanceOfRain)
         {
             Debug.Log("Il fait soleil.");
-            //meteoo.GetComponent<Image>().color = Color.yellow;
+            spritemeteo.sprite = meteoo[0];
+
         }
 
     }
