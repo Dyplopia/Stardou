@@ -31,12 +31,8 @@ public class meteo : MonoBehaviour
         {
             Debug.Log("Il pleut.");
             spritemeteo.sprite = meteoo[1];
-
-            while (dice >= chanceOfRain)
-            {
-                plansMouiller.plan1mouiller = true;
-                plansMouiller.plan2mouiller = true;
-            }
+            plansMouiller.plan1mouiller = true;
+            plansMouiller.plan2mouiller = true;
         }
 
         else if (dice < chanceOfRain)
