@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e2fb4d51be358b14a900a1e5c40b564d, type: 3}
+  m_Name: Plant4
+  m_EditorClassIdentifier: 
+  achatPlante: 10
+  ventePlante: 30
+  nbrGraine: 0
+  planteReady: 0
+  plantePose: 0
+  timeBTWStage: 3
+  planteName: Plant4
+  planteStages:
+  - {fileID: 1163202070, guid: dc81c94f8b30c724faa36a918cb375a3, type: 3}
+  - {fileID: 265823154, guid: dc81c94f8b30c724faa36a918cb375a3, type: 3}
+  planteStagenum: {fileID: 0}
+  planteIcon:
+  - {fileID: -1842044237, guid: dc81c94f8b30c724faa36a918cb375a3, type: 3}

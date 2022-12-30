@@ -1,0 +1,21 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 370b1d7f7d96c0e4db5415b79ac1f13a, type: 3}
+  m_Name: Terre4
+  m_EditorClassIdentifier: 
+  usedplan: 0
+  spriteTerrain:
+  - {fileID: -1391775814, guid: 1f47b9e7fb23108468c70d3a344dd418, type: 3}
+  - {fileID: 1179609204, guid: dc81c94f8b30c724faa36a918cb375a3, type: 3}
+  spriteTerrenum: {fileID: 0}
+  planWet: 0
+  timeWet: 0
