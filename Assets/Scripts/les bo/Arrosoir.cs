@@ -18,7 +18,7 @@ public class Arrosoir : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        meteoRain = GameObject.Find("Terrain").GetComponent<Meteo>();
+        meteoRain = GameObject.Find("laMeteo").GetComponent<Meteo>();
     }
 
     // Update is called once per frame
