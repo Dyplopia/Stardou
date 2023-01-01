@@ -1,7 +1,7 @@
-﻿using System.Collections;
+﻿    using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+using UnityEngine.UI;
 public class Plantation : MonoBehaviour
 {
     public scriptableTerre terreselected;
@@ -11,20 +11,21 @@ public class Plantation : MonoBehaviour
     //public Meteo meteoRain;
 
     public GameObject testing;
+    public Sprite _defaultSprite;
+
 
     public float timerPlante;
 
-    // Start is called before the first frame update
     void Start()
     {
         terreselected.Initialisation2();
         arrosoirSelect = GameObject.Find("StockdeGraines").GetComponent<Arrosoir>();
         argentVente = GameObject.Find("Store").GetComponent<Magasin>();
+        // argentVente = FindObjectOfType<Magasin>();
         selection.plantselected.planteStagenum = testing.GetComponent<SpriteRenderer>();
         //meteoRain = GameObject.Find("Terrain").GetComponent<Meteo>();
     }
 
-    // Update is called once per frame
     void Update()
     {
         arrosoirSelect.tpsArro();
@@ -45,6 +46,8 @@ public class Plantation : MonoBehaviour
                 selection.buttonautreplante1.interactable = true;
                 selection.buttonautreplante2.interactable = true;
                 selection.buttonautreplante3.interactable = true;
+
+                selection.plantselected.planteStagenum.sprite = selection.plantselected.planteStages[0];
             }
 
             else if (terreselected.usedplan == true)
@@ -62,6 +65,7 @@ public class Plantation : MonoBehaviour
         {
             if (terreselected.planWet == false)
             {
+
                 Debug.Log("Le plan est arrosé.");
                 //terreselected.spriteTerrenum.sprite = terreselected.spriteTerrain[1];
                 terreselected.planWet = true;
@@ -94,36 +98,43 @@ public class Plantation : MonoBehaviour
         {
             RecolteReady();
         }
-
     }
 
     public void isPlanted()
     {
-        if (selection.plantselected.plantePose == true)
+        if (selection.plantselected.plantePose == true && !selection.plantselected.planteReady)
         {
             ////appeler les sprites
             //testing.GetComponent<SpriteRenderer>().sprite = selection.plantselected.planteStagenum;
-            selection.plantselected.planteStagenum.sprite = selection.plantselected.planteStages[0];
+            //selection.plantselected.planteStagenum.sprite = selection.plantselected.planteStages[0];
 
             if (terreselected.planWet == true)
             {
                 timerPlante += 1 * Time.deltaTime;
             }
 
-            if (selection.plantselected.planteStagenum == selection.plantselected.lastSprite())
+            //Si on est recoltable
+            // if (selection.plantselected.planteStagenum == selection.plantselected.lastSprite())
+            if (selection.plantselected.planteStagenum.sprite == selection.plantselected.lastSprite())
             {
                 Debug.Log("Le.La " + selection.plantselected.planteName + " peut être récolté.e.");
                 selection.plantselected.planteReady = true;
                 //RecolteReady();
             }
-            else if (timerPlante >= selection.plantselected.timeBTWStage)
+            else if (timerPlante >= selection.plantselected.timeBTWStage && !selection.plantselected.planteReady) //&& on est pas au dernier stage
             {
-                for (int i = 0; i < selection.plantselected.planteStages.Length; i++)
-                {
-                    selection.plantselected.planteStagenum.sprite = selection.plantselected.planteStages[i];
-                    timerPlante = 0;
-                    Debug.Log("Le.La " + selection.plantselected.planteName + " pousse encore.");
-                }
+
+                timerPlante = 0;
+                selection.plantselected.currentStage++;
+                selection.plantselected.planteStagenum.sprite = selection.plantselected.planteStages[selection.plantselected.currentStage];
+                Debug.Log("Le.La " + selection.plantselected.planteName + " pousse encore. Elle est au " + selection.plantselected.currentStage + " stages");
+
+                // for (int i = 0; i < selection.plantselected.planteStages.Length; i++)
+                // {
+                //     selection.plantselected.planteStagenum.sprite = selection.plantselected.planteStages[i];
+                //     timerPlante = 0;
+                //     Debug.Log("Le.La " + selection.plantselected.planteName + " pousse encore.");
+                // }
             }
 
             //else if (timerPlante >= selection.plantselected.timeBTWStage)
@@ -179,12 +190,17 @@ public class Plantation : MonoBehaviour
     {
         if (/*selection.plantselected.planteReady == true &&*/ arrosoirSelect.arroselect == false)
         {
-            selection.plantselected.plantePose = false;
-            selection.plantselected.planteReady = false;
+            // selection.plantselected.plantePose = false;
+            // selection.plantselected.planteReady = false;
+
             terreselected.usedplan = false;
             argentVente.argent += selection.plantselected.ventePlante;
             Debug.Log("Le.La " + selection.plantselected.planteName + " a été récolté.e. Vous l'avez vendu " + selection.plantselected.ventePlante + " pesos.");
             timerPlante = 0;
+
+            //Default Sprite
+            selection.plantselected.ResetOnRecolte();
+            selection.plantselected.planteStagenum.sprite = _defaultSprite;
         }
     }
 }

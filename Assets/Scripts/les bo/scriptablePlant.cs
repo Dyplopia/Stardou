@@ -19,6 +19,10 @@ public class scriptablePlant : ScriptableObject
     public string planteName;
 
     public Sprite[] planteStages;
+    public int currentStage = 0;
+    public int nombreStages = 3;
+
+
     public Sprite lastSprite()
     {
         return planteStages[planteStages.Length - 1];
@@ -34,6 +38,12 @@ public class scriptablePlant : ScriptableObject
         plantePose = false;
         //planteChoisie = false;
         planteStagenum = null;
+        currentStage = 0;
     }
 
+    public void ResetOnRecolte(){
+        currentStage = 0;
+        planteReady = false;
+        plantePose = false;
+    }
 }
