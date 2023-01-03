@@ -18,11 +18,13 @@ MonoBehaviour:
   planteReady: 0
   plantePose: 0
   timeBTWStage: 3
-  planteName: Plant2
+  planteName: Carotte
   planteStages:
   - {fileID: -189364901, guid: 1f47b9e7fb23108468c70d3a344dd418, type: 3}
   - {fileID: 498747323, guid: 1f47b9e7fb23108468c70d3a344dd418, type: 3}
-  - {fileID: -1042847255, guid: 1f47b9e7fb23108468c70d3a344dd418, type: 3}
+  - {fileID: 21300000, guid: b0327646180ab9a4f977505aaf5f87ce, type: 3}
+  currentStage: 0
+  nombreStages: 3
   planteStagenum: {fileID: 0}
   planteIcon:
-  - {fileID: 668995454, guid: 1f47b9e7fb23108468c70d3a344dd418, type: 3}
+  - {fileID: 21300000, guid: b0327646180ab9a4f977505aaf5f87ce, type: 3}
