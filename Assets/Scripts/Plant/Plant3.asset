@@ -18,12 +18,14 @@ MonoBehaviour:
   planteReady: 0
   plantePose: 0
   timeBTWStage: 2
-  planteName: Plant3
+  planteName: Fraise
   planteStages:
   - {fileID: 1125187488, guid: 1f47b9e7fb23108468c70d3a344dd418, type: 3}
   - {fileID: -930134372, guid: 1f47b9e7fb23108468c70d3a344dd418, type: 3}
   - {fileID: 1009663076, guid: 1f47b9e7fb23108468c70d3a344dd418, type: 3}
-  - {fileID: -1512065382, guid: 1f47b9e7fb23108468c70d3a344dd418, type: 3}
+  - {fileID: 21300000, guid: 490bce930e3e04c4884522e18ad0e2e6, type: 3}
+  currentStage: 0
+  nombreStages: 3
   planteStagenum: {fileID: 0}
   planteIcon:
   - {fileID: 1642089268, guid: 1f47b9e7fb23108468c70d3a344dd418, type: 3}

@@ -3955,6 +3955,10 @@ PrefabInstance:
       propertyPath: m_sharedMaterial
       value: 
       objectReference: {fileID: -3606275074921115386, guid: 276c38023d906d340aedc90b07fb560a, type: 2}
+    - target: {fileID: 4046599995814616581, guid: 137d1ed20c4798148b4051d6f9e5b6a4, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 490bce930e3e04c4884522e18ad0e2e6, type: 3}
     - target: {fileID: 4046599995814616603, guid: 137d1ed20c4798148b4051d6f9e5b6a4, type: 3}
       propertyPath: m_Name
       value: iconachat3
@@ -4525,6 +4529,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: ChoixPlant3
       objectReference: {fileID: 0}
+    - target: {fileID: 2292102210085948570, guid: 3a2ca4a2b365fd346ac4a98e527d1db0, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 490bce930e3e04c4884522e18ad0e2e6, type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3a2ca4a2b365fd346ac4a98e527d1db0, type: 3}
 --- !u!114 &1826497345 stripped
