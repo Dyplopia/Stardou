@@ -20,7 +20,7 @@ public class scriptablePlant : ScriptableObject
 
     public Sprite[] planteStages;
     public int currentStage = 0;
-    public int nombreStages = 3;
+    //public int nombreStages = 3;
 
 
     public Sprite lastSprite()

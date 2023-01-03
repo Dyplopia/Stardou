@@ -201,7 +201,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Farm Items Extra_4
+      name: default
       rect:
         serializedVersion: 2
         x: 0
@@ -317,9 +317,9 @@ TextureImporter:
     secondaryTextures: []
     nameFileIdTable:
       Farm Items Extra_7: 265823154
+      default: 1163202070
       Farm Items Extra_1: -1782456736
       Farm Items Extra_5: 1746755048
-      Farm Items Extra_4: 1163202070
       terre2: 1179609204
       Farm Items Extra_6: -1842044237
       Farm Items Extra_2: -1639940588
